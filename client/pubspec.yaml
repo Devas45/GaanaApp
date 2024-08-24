@@ -66,6 +66,25 @@ dev_dependencies:
   custom_lint: ^0.6.4
   riverpod_generator: ^2.4.0
   riverpod_lint: ^2.3.10
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/gannalogo.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/images/gannalogo.png"
+    background_color: "#FF00FF"
+    theme_color: "#FFC0CB"
+  windows:
+    generate: true
+    image_path: "assets/images/gannalogo.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/images/gannalogo.png"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

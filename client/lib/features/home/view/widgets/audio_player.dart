@@ -1,4 +1,5 @@
 import 'package:client/core/providers/current_song_notifier.dart';
+import 'package:client/core/providers/current_user_notifier.dart';
 import 'package:client/core/theme/app_pallete.dart';
 import 'package:client/features/home/viewmodel/home_viewmodel.dart';
 import 'package:flutter/cupertino.dart';
@@ -14,6 +15,8 @@ class AudioPlayer extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final currentsong = ref.watch(currentSongNotifierProvider);
     final songNotifier = ref.read(currentSongNotifierProvider.notifier);
+    final userfavorites =
+        ref.read(currentUserNotifierProvider.select((data) => data!.favorites));
     if (currentsong == null) {
       return const SizedBox();
     }
@@ -112,9 +115,13 @@ class AudioPlayer extends ConsumerWidget {
                                 songId: currentsong.id,
                               );
                         },
-                        icon: const Icon(
-                          CupertinoIcons.heart,
-                          color: Pallete.whiteColor,
+                        icon: Icon(
+                          userfavorites
+                                  .where((fav) => fav.song_id == currentsong.id)
+                                  .toList()
+                                  .isNotEmpty
+                              ? CupertinoIcons.heart_fill
+                              : CupertinoIcons.heart,
                         ),
                       ),
                     ],
