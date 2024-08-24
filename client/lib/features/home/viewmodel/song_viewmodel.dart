@@ -46,5 +46,6 @@ class HomeViewModel extends _$HomeViewModel {
     );
 
     print(state);
+    _favSongSuccess(bool isFavorite, String songId) {}
   }
 }
