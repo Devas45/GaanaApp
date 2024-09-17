@@ -1,0 +1,3 @@
+*Rhythmix*: Music Streming Application designed to listen,upload and manage the music on Mobile devices,Web Browsers and many more...
+The app is built using Flutter as a Frontend,FastAPI and Postgres DB as backend,feature wise development is incorporated using MVVVM architecture,
+User Authentication is ensured using JWT.
